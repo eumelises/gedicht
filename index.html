@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Für dich</title>
+  <meta name="description" content="Ein kleines Gedicht – nur für dich." />
+  <style>
+    :root {
+      --bg: #f7f7f9;
+      --fg: #111;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0b0b0f; --fg: #eaeaf0; --muted:#a3a3ad; --card:#14141a; }
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(0,0,0,.04), transparent 50%), var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    main {
+      max-width: 720px;
+      width: 100%;
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 40px);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(26px, 5vw, 40px);
+      letter-spacing: .2px;
+    }
+    p.subtitle { margin: 0 0 22px; color: var(--muted); }
+    .poem {
+      white-space: pre-wrap; /* Zeilenumbrüche aus dem Gedicht erhalten */
+      font-size: clamp(18px, 4.2vw, 22px);
+    }
+    footer {
+      margin-top: 28px; color: var(--muted); font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ein kleines Geburtstagsgedicht</h1>
+    <p class="subtitle">Für Eumel</p>
+
+    <div class="poem" id="poem">
+Die coolste Sock' der Eberstadt,
+Und uns'rer schön verträumten Welt
+Bist du, das ist doch allen klar.
+Sind Groupies, dir verfallen gar,
+Wie Teenies ihrem Boyband-Held.
+Was hast du, was nicht jeder hat?
+
+Fragst du, wir machen gern Publik:
+Magst Kühe, wie man leicht erkennt
+Wird deine Nasenscheidewand 
+Doch regelrecht entzwei gerammt
+Und, einem Kampfstier gleich, zertrenmt.
+Dein Nasenring macht dich unique
+
+Klar gibt es neben Körperkunst
+Noch vieles, vieles mehr zu sagen
+Doch Ketten, Piercings, Tattoos, Ringe,
+Sind alles ziemlich schöne Dinge
+Die möcht ich hier nicht unterschlagen
+Dein Style trägt bei zu uns'rer Gunst.
+
+Dass du stark und sympathisch bist,
+Und heftig Queer, muss man noch sagen.
+Dazu bist du, weiß Gott, nicht prüde
+Hast eine tolle Attitüde;
+Bist munter auch an schlechten Tagen
+Selbst heute, wo Geburtstag ist.
+
+Doch sah das auch mal anders aus
+Da ging es für dich in die Klapse
+Zu uns'rem Glück, so könnt man's nennen
+Sonst würden wir dich gar nicht kennen
+Man richtete dir die Synapse
+Und schon ging es da wieder raus
+
+Und heute, ca. ein Jahr später?
+Bist du verliebt, wie ist das schön
+In einen wuseligen Vusi
+Den ich dir klauen möchte, Scusi
+Der Mann: Ein Sexidol, obszön 
+Und noch dazu kein Frauenschläger.
+
+Was gibt es noch? Was macht dich aus?
+Du häkelst und rauchst wie ein Schlot,
+Du tanzt die Stange rauf und runter
+Erstaunlich unsexy mitunter,
+Magst Hammer, Sichel, Stern und Rot,
+Bist True Crime Fan und Kaffeemaus.
+
+Mit dir kann man gut Klimakleben
+Und vieles mehr, ich freu mich drauf!
+Jetzt lass dich aber erstmal feiern
+Als wär Oktoberfest in Bayern
+Und mach deine Geschenke auf.
+Du sollst hoch und noch höher leben!
+
+Alles Gute 
+Dein Mo
+
+    </div>
+
+    <footer>
+      <small>© 2025</small>
+    </footer>
+  </main>
+
+  <!-- Optional: Gedicht per URL-Parameter setzen (?text=...) -->
+  <script>
+    const params = new URLSearchParams(location.search);
+    const txt = params.get("text");
+    if (txt) {
+      document.getElementById("poem").textContent = decodeURIComponent(txt);
+    }
+  </script>
+</body>
+</html>
